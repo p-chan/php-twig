@@ -173,7 +173,7 @@
         'captures':
           '1':
             'name': 'keyword.operator.arithmetic.twig'
-        'match': '(?<=\\s)(\\+|-|\\*|/|%|//)(?=\\s)'
+        'match': '(\\+|-|\\*|/|%|//)'
       }
       {
         'captures':
@@ -220,7 +220,7 @@
     ]
 
   'twig-functions-warg':
-    'begin': '(?<=[\\s\\(\\[\\{:,])(attribute|block|constant|cycle|date|divisibleby|dump|parent|random|range|sameas|template_from_string)(\\()'
+    'begin': '(?<=[\\s\\(\\[\\{:,])([a-zA-Z0-9_\\-]+)\\s*(\\()'
     'beginCaptures':
       '1':
         'name': 'support.function.twig'
@@ -453,6 +453,9 @@
         'include': '#twig-hashes'
       }
       {
+        'include': '#twig-operators'
+      }
+      {
         'include': '#twig-arrays'
       }
       {
@@ -502,11 +505,12 @@
   'twig-keywords':
     'match': '(?<=\\s)((?:end)?(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\\s)'
     'name': 'keyword.control.twig'
+
   'twig-functions':
     'captures':
       '1':
         'name': 'support.function.twig'
-    'match': '(?<=is\\s)(defined|empty|even|iterable|none|null|odd)'
+    'match': '(?!is\\s+(?!not\\s+|))(defined|empty|even|iterable|none|null|odd)'
 
   'twig-macros':
     'begin': '(?x)            (?<=[\\s\\(\\[\\{:,])            ([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)            (?:                (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)            )            (\\()'
@@ -573,7 +577,7 @@
     'match': '(?<=[\\s\\{\\[\\(:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\s\\}\\[\\]\\(\\)\\.\\|,:])'
 
   'twig-filters-warg':
-    'begin': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)(convert_encoding|date|date_modify|default|e|escape|format|join|merge|number_format|replace|slice|split|trim)(\\()'
+    'begin': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\-]+)(\\()'
     'beginCaptures':
       '1':
         'name': 'support.function.twig'
