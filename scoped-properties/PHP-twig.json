@@ -1,10 +1,8 @@
 {
   ".twig": {
     "editor": {
-      "commentStart": "{# ",
-      "commentEnd": " #}",
-      "increaseIndentPattern": "(?x)\n\t((\\{%\\s*(?:(else)?if|else|autoescape|for|block)\\s*%\\})\n\t)$",
-      "decreaseIndentPattern": "(?x)\n\t(\\{%\\s*(elseif|end(?:if|else|autoescape|for|block))(?:\\s[^%\\}]*)?\\s*%\\})\n\t"
+      "commentStart": "{#",
+      "commentEnd": "#}"
     }
   },
   ".twig .meta.tag.template.value.twig": {
