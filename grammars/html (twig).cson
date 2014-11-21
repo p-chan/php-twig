@@ -42,7 +42,7 @@
     'name': 'comment.block.twig'
 
   'twig-variable-tags':
-    'begin': '{(?:{|(?<={#))'
+    'begin': '(?:{{|(?<={#))'
     'beginCaptures':
       '0':
         'name': 'punctuation.section.tag.twig'
