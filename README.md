@@ -8,5 +8,3 @@ Languages supported :
 * Javascript
 * JSON
 * XML
-
-This package is a fork of https://github.com/reesef/php-twig.
