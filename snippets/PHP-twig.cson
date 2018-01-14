@@ -38,9 +38,6 @@
   'include':
     'prefix': 'inc'
     'body': '{% include \'${1:template}\' ${2:with ${3:vars}${4: only}} %}$0'
-  'include':
-    'prefix': 'include'
-    'body': '{% include \'${1:template}\' ${2:with ${3:vars}${4: only}} %}$0'
   'set (block)':
     'prefix': 'setb'
     'body': '{% set ${1:var} %}\n\t$0\n{% endset %}'
